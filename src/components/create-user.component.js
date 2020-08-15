@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import axios from 'axios';
+
 import { Form, Button } from "react-bootstrap";
 
 class CreateUser extends Component {
@@ -19,11 +21,14 @@ class CreateUser extends Component {
 
     const { username } = this.state;
 
-    const user = {
+    const newUser = {
       username
     }
 
-    console.log(user);
+    axios.post('http://localhost:5000/users/add', newUser)
+      .then(res => console.log(res.data));
+
+    console.log(newUser);
   };
 
   render() {
