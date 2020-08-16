@@ -55,8 +55,6 @@ class EditExerciseForm extends Component {
       date: Date(date).toString(),
     };
 
-    console.log(exercise);
-
     axios
       .post(`http://localhost:5000/exercises/update/${id}`, exercise)
       .then((res) => console.log(res.data));
@@ -64,9 +62,6 @@ class EditExerciseForm extends Component {
 
   render() {
     const { username, description, duration, date } = this.state;
-
-    console.log(this.state);
-    console.log(this.props.exerciseId);
 
     return (
       <Form onSubmit={this.handleSubmit}>
@@ -118,7 +113,6 @@ class EditExerciseForm extends Component {
 }
 
 const EditExercise = ({match}) => {
-  console.log(match);
   return (
     <div className="page-content">
       <h4>Edit Exercise</h4>

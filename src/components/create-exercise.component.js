@@ -60,8 +60,6 @@ class CreateExerciseForm extends Component {
   render() {
     const { username, description, duration, date, users } = this.state;
 
-    console.log(username);
-
     return (
       <Form onSubmit={this.handleSubmit}>
         <Form.Group controlId="usernameControl">
